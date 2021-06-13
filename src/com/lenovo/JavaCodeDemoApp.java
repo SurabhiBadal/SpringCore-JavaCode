@@ -9,11 +9,13 @@ class JavaCodeDemoApp {
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(SportConfig.class);
 
         //Retrieve bean from spring container
-        Coach theCoach=context.getBean("baseBallCoach",Coach.class);
+       BaseBallCoach theCoach=context.getBean("baseBallCoach",BaseBallCoach.class);
 
         //call methods
         System.out.println(theCoach.getDailyWorkout());
         System.out.println(theCoach.getDailyFortune());
+        System.out.println(theCoach.getEmail());
+        System.out.println(theCoach.getTeam());
 
         context.close();
 
